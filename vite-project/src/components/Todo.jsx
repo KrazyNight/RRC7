@@ -1,10 +1,16 @@
 function Todo () {
     return (
-        <div>Todo Item</div>
+        <div className="todo-item">
+            <h2>Finishe React Course</h2>
+            <button>Delete</button>
+        </div>
     )
 };
 
 export default Todo;
+
+
+
 
 
 

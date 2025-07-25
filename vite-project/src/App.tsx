@@ -1,28 +1,19 @@
-import './App.css'
+import "./App.css";
+import Todo from "./components/Todo.jsx";
+import TodoTitle from "./components/TodoTitle.jsx";
+import Popup from "./components/Popup.jsx"
+
 
 function App() {
-
   return (
     <>
-    <h1>My Todo list</h1>
-    <div>
-      <h2>Finish React Courses</h2>
-      <button>Delete</button>
-    </div>
-    <div>
-      <h2>Finish ASAP Frontenf</h2>
-      <button>Delete</button>
-    </div>
-    <div>
-      <h2>Land A Junior Job</h2>
-      <button>Delete</button>
-    </div>
-    <div>
-      <h2>Earn $100k+</h2>
-      <button>Delete</button>
-    </div>
+      <TodoTitle />
+      <Todo />
+      <Todo />
+      <Todo />
+      <Todo />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
