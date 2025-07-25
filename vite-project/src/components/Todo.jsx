@@ -1,8 +1,13 @@
-function Todo () {
+function Todo({ task, description }) {
+
+    function deleteHandler() {
+        console.log('Delete', task);
+    }
     return (
         <div className="todo-item">
-            <h2>Finishe React Course</h2>
-            <button>Delete</button>
+            <h2>{ task }</h2>
+            <p>{ description }</p>
+            <button onClick={() => deleteHandler()}>Delete</button>
         </div>
     )
 };
