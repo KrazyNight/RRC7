@@ -5,13 +5,16 @@ import Popup from "./components/Popup.jsx";
 // Below: this import allows 'hooks' to be used in react
 import { useState } from "react";
 
+import Counter from './components/Counter.jsx';
+
+
 
 
 
 
 
 function App() {
-  const [popupOpen, setPopupOpen] = useState(false);
+  
   // By default we want the Popup to have 'false' by 'default'
   //let popupOpen = false
   // useState(false) 
@@ -23,13 +26,24 @@ function App() {
   // const [state, setState] = useState(false)
   // setSate: Function that changes the 'state'
   // fasle: is the dafault value
+  
+  /**
+   * 1. Create a Counter component
+   * 2. Create the 'count' with a default value of 0
+   * 3. Create a button to ..increase the count. 
+   * 4. Create a button to ..decrease the count.
+   * 5. Create a button to ..reset    the count.
+   * 6. Render your Counter component in App.jsx
+   */
+
+  return <Counter /> 
 
 
-
-
+  const [popupOpen, setPopupOpen] = useState(false);
 
   return (
     <>
+
       <TodoTitle />
       <div>
         <input type="text" onChange={(event) => {
