@@ -1,4 +1,4 @@
-function Popup ({ title }) {
+function Popup ({ title, closePopup }) {
   return (
 
     <>
@@ -9,11 +9,14 @@ function Popup ({ title }) {
           onClick={() => console.log('Confirm Btn') }
           >Confirm</button>
           <button className="popup__btn popup__btn--cancel"
-          onClick={() => console.log('Cancel Btn') }
+          onClick={() => closePopup() }
           >Cancel</button>
         </div>
       </div>
-      <div className="backdrop"></div>
+      <div className="backdrop"
+      onClick={() => closePopup()}
+      
+      ></div>
     </>
   )
 };

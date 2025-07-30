@@ -3,7 +3,7 @@ import Todo from "./components/Todo.jsx";
 import TodoTitle from "./components/TodoTitle.jsx";
 import Popup from "./components/Popup.jsx";
 // Below: this import allows 'hooks' to be used in react
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Counter from './components/Counter.jsx';
 
@@ -35,15 +35,27 @@ function App() {
    * 5. Create a button to ..reset    the count.
    * 6. Render your Counter component in App.jsx
    */
-
-  return <Counter /> 
-
+  //...
+  // return <Counter /> 
 
   const [popupOpen, setPopupOpen] = useState(false);
 
+  function togglePopup() {
+    setPopupOpen(true)
+    console.log('parent notified!')
+  }
+
+  function closePopup() {
+    setPopupOpen(false);
+  }
+
+  useEffect(() => {
+
+  }, [])
+
+
   return (
     <>
-
       <TodoTitle />
       <div>
         <input type="text" onChange={(event) => {
@@ -52,15 +64,19 @@ function App() {
         />
         <button onClick={() => setPopupOpen(true)}>Add to do </button>
       </div>
-      <Todo task="Learn React"
+      <Todo togglePopup={togglePopup} 
+      task="Learn React"
       />
-      <Todo task="Finsih ASAP Frontend"
+      <Todo togglePopup={togglePopup} 
+      task="Finsih ASAP Frontend"
       />
-      <Todo task="Land Junior Job"
+      <Todo togglePopup={togglePopup} 
+      task="Land Junior Job"
       />
-      <Todo task="Earn $100k+"
+      <Todo togglePopup={togglePopup} 
+      task="Earn $100k+"
       />
-      { popupOpen && <Popup title="Are you 100% sure?"/> }
+      { popupOpen && <Popup closePopup={closePopup} title="Are you 100% sure?"/> }
       {/*{ popupOpen ? <Popup title="Are you 100% sure?"/> : null } */}
       {/* { popupOpen && <Popup title="Are you 100% sure?"/> } */}
       {/* Above: they do the same thing */}
