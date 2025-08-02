@@ -76,7 +76,8 @@ function App() {
       <Todo togglePopup={togglePopup} 
       task="Earn $100k+"
       />
-      { popupOpen && <Popup closePopup={closePopup} title="Are you 100% sure?"/> }
+      <Popup closePopup={closePopup} title="Are you 100% sure?" />
+      {/* { popupOpen && <Popup closePopup={closePopup} title="Are you 100% sure?"/> } */}
       {/*{ popupOpen ? <Popup title="Are you 100% sure?"/> : null } */}
       {/* { popupOpen && <Popup title="Are you 100% sure?"/> } */}
       {/* Above: they do the same thing */}
